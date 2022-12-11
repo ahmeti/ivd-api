@@ -1,0 +1,33 @@
+{
+    "name": "ahmeti/ivd-api",
+    "description": "İnternet Vergi Dairesi - Api",
+    "keywords": [
+        "internet",
+        "vergi",
+        "dairesi",
+        "api"
+    ],
+    "homepage": "https://github.com/ahmeti/ivd-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmet Imamoglu",
+            "email": "ahmet363@gmail.com",
+            "homepage": "https://ahmetimamoglu.com.tr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": ">=6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ahmeti\\Ivd\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {}
+}
