@@ -19,6 +19,17 @@ class IvdService
         $this->refresh();
     }
 
+    public function refresh()
+    {
+        $this->token = null;
+        $this->data = null;
+        $this->items = [];
+
+        $this->setToken();
+        $this->setData();
+        $this->setItems();
+    }
+
     protected function setToken()
     {
         $client = new Client();
@@ -91,17 +102,6 @@ class IvdService
         foreach ($this->data->data as $item) {
             $this->items[$item->refDataInfo->name] = $item->values;
         }
-    }
-
-    public function refresh()
-    {
-        $this->token = null;
-        $this->data = null;
-        $this->items = [];
-
-        $this->setToken();
-        $this->setData();
-        $this->setItems();
     }
 
     public function getData()
