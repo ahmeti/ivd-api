@@ -113,4 +113,9 @@ class IvdService
     {
         return $this->items['RF_VERGI_DAIRELERI'];
     }
+
+    public function getVergiKodListesi()
+    {
+        return $this->items['RF_FILTRELI_VERGIKODLARI'];
+    }
 }

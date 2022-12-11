@@ -6,10 +6,15 @@ Bu paket ile İnternet Vergi Dairesi'de (https://ivd.gib.gov.tr/) bulunan, herke
 composer require ahmeti/ivd-api
 ```
 
+```php
+require __DIR__ . '/vendor/autoload.php';
+
+$ivdService = new \Ahmeti\Ivd\IvdService();
+```
+
 ## 1. Tüm Veriler
 ```php
 try {
-    $ivdService = new \Ahmeti\Ivd\IvdService();
     $data = $ivdService->getData();
     print_r($data);
 }catch (\Exception $exception){
@@ -20,7 +25,6 @@ try {
 ## 2. Vergi Daire Listesi
 ```php
 try {
-    $ivdService = new \Ahmeti\Ivd\IvdService();
     $data = $ivdService->getVergiDaireListesi();
     print_r($data);
 }catch (\Exception $exception){
@@ -45,13 +49,39 @@ array:1044[
     "vdAdiKodu": "KARAİSALI MAL MÜDÜRLÜĞÜ (001105)"
     "ilKodu": "001"
   }
-  2 => {
-    "vdKodu": "001109"
-    "vdAdi": "POZANTI MAL MÜDÜRLÜĞÜ"
-    "orgOid": "00000000001110"
-    "vdKoduAdi": "001109 POZANTI MAL MÜDÜRLÜĞÜ"
-    "vdAdiKodu": "POZANTI MAL MÜDÜRLÜĞÜ (001109)"
-    "ilKodu": "001"
+  ...
+```
+
+## 3. Vergi Kod Listesi
+```php
+try {
+    $data = $ivdService->getVergiKodListesi();
+    print_r($data);
+}catch (\Exception $exception){
+    print_r($exception);
+}
+```
+```php
+array:743[
+  0 => {
+    "gelirTuru": 1
+    "tahsilatGrupTipi": "SUREKLI"
+    "vergiKisaAdi": "0001 YIL.GEL.V."
+    "thsBagsizDurumu": "0"
+    "vergiGrubu": 1
+    "vergiAdi": "0001 YILLIK GELİR VERGİSİ"
+    "topluTkpDurum": "0"
+    "vergiKodu": "0001"
+  }
+  1 => {
+    "gelirTuru": 1
+    "tahsilatGrupTipi": "SUREKLI"
+    "vergiKisaAdi": "0002 ZIRAİ.K.G.V."
+    "thsBagsizDurumu": "0"
+    "vergiGrubu": 1
+    "vergiAdi": "0002 ZIRAİ KAZANÇ GELİR VERGİSİ"
+    "topluTkpDurum": "0"
+    "vergiKodu": "0002"
   }
   ...
 ```
