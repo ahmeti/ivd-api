@@ -1,5 +1,5 @@
 # İnternet Vergi Dairesi - Api
-Bu paket ile İnternet Vergi Dairesi'de (https://ivd.gib.gov.tr/) bulunan, herkese açık (public) verilere ulaşabilirsiniz.
+Bu paket ile İnteraktif Vergi Dairesi (https://ivd.gib.gov.tr/) üzerinde bulunan, vergi kod listesi, vergi daire listesi gibi herkese açık (public) verilere ulaşabilirsiniz.
 
 ### Composer ile Yükleme
 ```
