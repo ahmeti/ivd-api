@@ -118,4 +118,14 @@ class IvdService
     {
         return $this->items['RF_FILTRELI_VERGIKODLARI'];
     }
+
+    public function getIlListesi()
+    {
+        return $this->items['RF_ILLER'];
+    }
+
+    public function getUlkeListesi()
+    {
+        return $this->items['RF_EVDO_ULKELER'];
+    }
 }

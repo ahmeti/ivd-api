@@ -85,3 +85,57 @@ array:743[
   }
   ...
 ```
+
+## 4. İl Listesi
+```php
+try {
+    $data = $ivdService->getIlListesi();
+    print_r($data);
+}catch (\Exception $exception){
+    print_r($exception);
+}
+```
+```php
+array:83 [
+  0 => {
+    "ilKodu": 1
+    "ilAdi": "ADANA"
+    "ilKoduIlAdi": "1 - ADANA"
+  }
+  1 => {
+    "ilKodu": 2
+    "ilAdi": "ADIYAMAN"
+    "ilKoduIlAdi": "2 - ADIYAMAN"
+  }
+  ...
+```
+
+## 5. Ülke Listesi
+```php
+try {
+    $data = $ivdService->getUlkeListesi();
+    print_r($data);
+}catch (\Exception $exception){
+    print_r($exception);
+}
+```
+```php
+array:266 [
+  0 => {
+    "ulkeAdiTUReng": "ABD MINOR OUTLYING ADALARI (US MINOR OUTLYING ISLANDS)"
+    "ulkeKodu": "013"
+    "ulkeAdi": "ABD MINOR OUTLYING ADALARI"
+    "kodAd": "013-ABD MINOR OUTLYING ADALARI"
+    "ulkeAdiENG": "US MINOR OUTLYING ISLANDS"
+    "egmUlkeKodu": "USA"
+  }
+  1 => {
+    "ulkeAdiTUReng": "ABD VİRJİN ADALARI (US VIRGIN ISLANDS)"
+    "ulkeKodu": "457"
+    "ulkeAdi": "ABD VİRJİN ADALARI"
+    "kodAd": "457-ABD VİRJİN ADALARI"
+    "ulkeAdiENG": "US VIRGIN ISLANDS"
+    "egmUlkeKodu": "USA"
+  }
+  ...
+```
