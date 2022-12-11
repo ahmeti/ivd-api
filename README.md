@@ -1,5 +1,5 @@
 # İnternet Vergi Dairesi - Api
-Bu paket ile İnternet Vergi Dairesi'de (https://ivd.gib.gov.tr/) bulunan, herkese açık verilere ulaşabilirsiniz.
+Bu paket ile İnternet Vergi Dairesi'de (https://ivd.gib.gov.tr/) bulunan, herkese açık (public) verilere ulaşabilirsiniz.
 
 ### Composer ile Yükleme
 ```
@@ -9,27 +9,23 @@ composer require ahmeti/ivd-api
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
-$ivdService = new \Ahmeti\Ivd\IvdService();
-```
-
-## 1. Tüm Veriler
-```php
 try {
-    $data = $ivdService->getData();
-    print_r($data);
+    $ivdService = new \Ahmeti\Ivd\IvdService();
 }catch (\Exception $exception){
     print_r($exception);
 }
+```
+
+## 1. Tüm Veriler (Ham)
+```php
+$data = $ivdService->getData();
+print_r($data);
 ```
 
 ## 2. Vergi Daire Listesi
 ```php
-try {
-    $data = $ivdService->getVergiDaireListesi();
-    print_r($data);
-}catch (\Exception $exception){
-    print_r($exception);
-}
+$data = $ivdService->getVergiDaireListesi();
+print_r($data);
 ```
 ```php
 array:1044[
@@ -54,12 +50,8 @@ array:1044[
 
 ## 3. Vergi Kod Listesi
 ```php
-try {
-    $data = $ivdService->getVergiKodListesi();
-    print_r($data);
-}catch (\Exception $exception){
-    print_r($exception);
-}
+$data = $ivdService->getVergiKodListesi();
+print_r($data);
 ```
 ```php
 array:743[
@@ -88,12 +80,8 @@ array:743[
 
 ## 4. İl Listesi
 ```php
-try {
-    $data = $ivdService->getIlListesi();
-    print_r($data);
-}catch (\Exception $exception){
-    print_r($exception);
-}
+$data = $ivdService->getIlListesi();
+print_r($data);
 ```
 ```php
 array:83 [
@@ -112,12 +100,8 @@ array:83 [
 
 ## 5. Ülke Listesi
 ```php
-try {
-    $data = $ivdService->getUlkeListesi();
-    print_r($data);
-}catch (\Exception $exception){
-    print_r($exception);
-}
+$data = $ivdService->getUlkeListesi();
+print_r($data);
 ```
 ```php
 array:266 [
@@ -136,6 +120,86 @@ array:266 [
     "kodAd": "457-ABD VİRJİN ADALARI"
     "ulkeAdiENG": "US VIRGIN ISLANDS"
     "egmUlkeKodu": "USA"
+  }
+  ...
+```
+
+## 6. Tahsilat Şekil Listesi
+```php
+$data = $ivdService->getTahsilatSekilListesi();
+print_r($data);
+```
+```php
+array:25 [
+  0 => {
+    "filter": "vezne"
+    "text": "Vezne"
+    "value": "0"
+  }
+  1 => {
+    "filter": "banka"
+    "text": "Banka"
+    "value": "1"
+  }
+  ...
+```
+
+## 7. Sicil Doğum Yeri İl İlçe Listesi
+```php
+$data = $ivdService->getSicilDogumYeriIlIlceListesi();
+print_r($data);
+```
+```php
+array:1242 [
+  0 => {
+    "kod": 2075
+    "ilceAdi": "ADANA"
+    "ilKodu": 1
+    "ilAdi": "ADANA"
+    "ilIlceAdi": "ADANA"
+  }
+  1 => {
+    "kod": 1757
+    "ilceAdi": "ALADAĞ"
+    "ilKodu": 1
+    "ilAdi": "ADANA"
+    "ilIlceAdi": "ADANA-ALADAĞ"
+  }
+  ...
+```
+
+## 8. Kurum Listesi
+```php
+$data = $ivdService->getKurumListesi();
+print_r($data);
+```
+```php
+array:19 [
+  0 => {
+    "kod": "59714804"
+    "ad": "EMNİYET GENEL MÜDÜRLÜĞÜ"
+  }
+  1 => {
+    "kod": "48909307"
+    "ad": "MADEN İŞLERİ GENEL MÜDÜRLÜĞÜ"
+  }
+  ...
+```
+
+## 9. Vergi Dairesi İl Listesi
+```php
+$data = $ivdService->getVergiDairesiIlListesi();
+print_r($data);
+```
+```php
+array:81 [
+  0 => {
+    "kod": "001"
+    "ad": "ADANA"
+  }
+  1 => {
+    "kod": "002"
+    "ad": "ADIYAMAN"
   }
   ...
 ```

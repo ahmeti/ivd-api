@@ -128,4 +128,24 @@ class IvdService
     {
         return $this->items['RF_EVDO_ULKELER'];
     }
+
+    public function getTahsilatSekilListesi()
+    {
+        return $this->items['RF_EVDO_TAHSILAT_SEKILLERI'];
+    }
+
+    public function getSicilDogumYeriIlIlceListesi()
+    {
+        return $this->items['RF_SICIL_DOGUMYERI_ILILCELER'];
+    }
+
+    public function getKurumListesi()
+    {
+        return $this->items['RF_KURUMLAR'];
+    }
+
+    public function getVergiDairesiIlListesi()
+    {
+        return $this->items['RF_INTVRG_INTVD_ILLER'];
+    }
 }
